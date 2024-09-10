@@ -4,7 +4,7 @@ export default function Filter() {
     return (
         <div>
             <form>
-                <select>
+                <select className="navbar-filter">
                     <option value="test">test</option>
                 </select>
             </form>

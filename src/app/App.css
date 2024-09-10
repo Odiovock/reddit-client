@@ -1,3 +1,71 @@
+nav {
+  width: 66%;
+  padding: 15px;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  box-shadow: 2px 2px 4px 1px rgba(200, 150, 255);
+  text-align: center;
+}
+
+nav ul {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 nav li {
-  display: inline-block;
+  min-width: 150px;
+  display: inline;
+}
+
+nav li.navlink {
+  width: 15%;
+  height: 30px;
+  min-width: 100px;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+nav li.searchbar {
+  width: 40%;
+  min-width: 250px;
+}
+
+nav li.filter {
+  width: 25%;
+  min-width: 150px;
+}
+
+nav a {
+  width: 100%;
+  min-width: 75px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-filter {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  min-width: 100px;
+}
+
+input.hs-search-field__input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  min-width: 150px;
+  font-size: 14px;
+  background-image: url(../../public/images/loupe32.png);
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 7%;
+  padding-left: 50px;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: none;
 }

@@ -9,15 +9,15 @@ export default function AppLayout() {
         <div>
             <nav>
                 <ul>
-                    <li>
+                    <li className="navlink">
                         <NavLink to={ROUTES.home()}>
-                            Home
+                            <div className={"navbar-navlink"}>Home</div>
                         </NavLink>
                     </li>
-                    <li>
+                    <li className="searchbar">
                         <SearchBar/>
                     </li>
-                    <li>
+                    <li className="filter">
                         <Filter/>
                     </li>
                 </ul>
