@@ -63,8 +63,8 @@ input.hs-search-field__input {
   background-image: url(../../public/images/loupe32.png);
   background-repeat: no-repeat;
   background-position: left 10px center;
-  background-size: 7%;
-  padding-left: 50px;
+  background-size: clamp(25px, 7%, 25px) auto;
+  padding-left: 40px;
   background-color: #fff;
   border: 1px solid #000;
   box-shadow: none;
