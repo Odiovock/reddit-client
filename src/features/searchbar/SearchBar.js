@@ -4,7 +4,7 @@ export default function SearchBar() {
     return (
         <div>
             <form>
-                <input type="text" className="hs-search-field__input"></input>
+                <input type="text" placeholder="Search articles " className="hs-search-field__input"></input>
             </form>
         </div>
     )
