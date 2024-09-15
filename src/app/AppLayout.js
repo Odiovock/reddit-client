@@ -22,6 +22,7 @@ export default function AppLayout() {
                     </li>
                 </ul>
             </nav>
+            <Outlet/>
         </div>
     )
 }

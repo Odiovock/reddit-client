@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Route, BrowserRouter, Routes} from "react-router-dom";
 import AppLayout from './AppLayout';
+import MainPageArticle from '../components/MainPageArticles/MainPageArticles';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<AppLayout/>}>
+            <Route index element={<MainPageArticle/>} />
           </Route>
         </Routes>
       </BrowserRouter>
