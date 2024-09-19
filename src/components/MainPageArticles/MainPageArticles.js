@@ -1,12 +1,17 @@
 import React from "react";
+import Lama from "../../ressources/images/1002997-Lama.jpg"
 
 export default function MainPageArticle() {
     return (
-        <div className="mainPageArticlesContainer" style={{margin: "auto"}}>
+        <div className="mainPageArticlesContainer hiddenScrollBar" style={{margin: "auto"}}>
             <div className="mainPageArticle">
-                <div style={{textAlign: "center", width: "50%"}}>
+                <div className="mainPageArticleTextZone">
                     <h2>some shit.</h2>
-                    <p>
+                    <div className="mainPageArticleButtonZone">
+                        <button>Upvote</button>
+                        <button>Downvote</button>
+                    </div>
+                    <p className="hiddenScrollBar" style={{maxHeight: "200px", overflow: "scroll"}}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat mi in iaculis venenatis. Maecenas blandit sapien dui, id pellentesque odio mattis non. 
                         Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi id euismod dui, eget dictum turpis. Donec ac lorem quis nisi auctor 
                         cursus sed non magna. Praesent cursus leo ut lacinia posuere. Donec egestas nunc venenatis nunc accumsan imperdiet. Curabitur faucibus tempus ipsum, tincidunt 
@@ -20,6 +25,9 @@ export default function MainPageArticle() {
                         eleifend. Donec malesuada non odio vel dictum.
                     </p>
                 </div>
+                <img src={Lama} alt="it's a lama" style={{margin: "auto", width: "40%", height: "auto"}}/>
+            </div>
+            <div div className="mainPageArticle">
             </div>
         </div>
     );
