@@ -97,13 +97,22 @@ nav a {
   justify-content: space-between;
 }
 
-.hiddenScrollBar::-webkit-scrollbar {
-  display: hidden;
+.hiddenScrollBar {
+  overflow-x: hidden;
 }
 
-.hiddenScrollBar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.hiddenScrollBar::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.hiddenScrollBar::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgba(135,211,255), rgba(200, 150, 255));
+  outline: 1px solid slategrey;
+  border-radius: 6px;
+}
+
+.hiddenScrollBar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgba(85,161,205), rgba(150, 100, 205));
 }
 
 input.hs-search-field__input {

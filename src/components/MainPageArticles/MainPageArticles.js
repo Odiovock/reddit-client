@@ -11,7 +11,7 @@ export default function MainPageArticle() {
                         <button>Upvote</button>
                         <button>Downvote</button>
                     </div>
-                    <p className="hiddenScrollBar" style={{maxHeight: "200px", overflow: "scroll"}}>
+                    <p className="hiddenScrollBar" style={{maxHeight: "200px"}}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat mi in iaculis venenatis. Maecenas blandit sapien dui, id pellentesque odio mattis non. 
                         Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi id euismod dui, eget dictum turpis. Donec ac lorem quis nisi auctor 
                         cursus sed non magna. Praesent cursus leo ut lacinia posuere. Donec egestas nunc venenatis nunc accumsan imperdiet. Curabitur faucibus tempus ipsum, tincidunt 
