@@ -1,10 +1,16 @@
 import React from "react";
 import Lama from "../../ressources/images/1002997-Lama.jpg";
+import Bob from "../../ressources/images/Bob.jpg"
 
 export default function ArticlePage() {
   return (
     <div className="fullArticleContainer">
-        <div className="fullArticleContent">
+        <div className="fullArticleButtons">
+            <button className="opinionButton">upvote</button>
+            <button className="opinionButton">downvote</button>
+        </div>
+        <div className="fullArticleContent scrollZones">
+
             <h1 style={{width: "100%", textAlign: "center"}}>Some other shit.</h1>
             <img src={Lama} alt="it's a lama" />
             <p>
@@ -32,22 +38,41 @@ export default function ArticlePage() {
             a, tempor at eros. Morbi ut rhoncus mi, a tristique enim.
             </p>
         </div>
-        <div>
-            <div>
-                <button>upvote</button>
-                <button>downvote</button>
-            </div>
-            <h2>Comments</h2>
-            <div>
-                <img src="" alt="profil pic"/>
+        <div className="fullArticleComments scrollZones">
+            <div className="myfullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
                 <p>commentaire</p>
             </div>
-            <div>
-                <img src="" alt="profil pic"/>
+            <div className="yourFullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
                 <p>commentaire</p>
             </div>
-            <div>
-                <img src="" alt="profil pic"/>
+            <div className="myfullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
+                <p>commentaire</p>
+            </div>
+            <div className="yourFullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
+                <p>commentaire</p>
+            </div>
+            <div className="myfullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
+                <p>commentaire</p>
+            </div>
+            <div className="myfullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
+                <p>commentaire</p>
+            </div>
+            <div className="yourFullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
+                <p>commentaire</p>
+            </div>
+            <div className="myfullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
+                <p>commentaire</p>
+            </div>
+            <div className="myfullArticleComment borderedElement">
+                <img src={Bob} alt="profil pic"/>
                 <p>commentaire</p>
             </div>
         </div>
