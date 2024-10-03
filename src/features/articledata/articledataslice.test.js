@@ -1,0 +1,1 @@
+import { mainPageData } from "./articledataslice";
