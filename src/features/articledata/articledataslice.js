@@ -1,38 +1,45 @@
 import { fetchHomePageData } from "../../app/api";
-import { createSlice } from "@reduxjs/toolkit";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const loadHomeData = createAsyncThunk(
-    "homeArticles/loadData",
-    async () => {
-        const data = fetchHomePageData();
-        const json = data.json();
-        return json;
-    }
+export const loadHomeData = createAsyncThunk(
+  "homeArticles/loadData", 
+  async () => {
+    const data = await fetchHomePageData();
+    console.log(data);
+    return data;
+  }
 );
 
-export const allRecipesSlice = createSlice({
-    name: 'homeArticles',
-    initialState: {
-      articles: [],
-      isLoading: false,
-      hasError: false,
-    },
-    reducers: {}, 
-    extraReducers: {
-        [loadData.pending]: (state, action) => { 
-          state.isLoading = true;
-          state.hasError = false;
-        },
-        [loadData.fulfilled]: (state, action) => {
-          state.isLoading = false;
-          state.hasError = false;
-        },
-        [loadData.rejected]: (state, action) => {
-          state.isLoading = false;
-          state.hasError = true;
-        },
-      },
-  });
-  
-  export default allRecipesSlice.reducer;
+const initialState = {
+  articles: [],
+  isLoading: false,
+  hasError: false,
+};
+
+export const sliceOptions = {
+  name: "homeArticles",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(loadHomeData.pending, (state) => {
+        state.isLoading = true;
+        state.hasError = false;
+      })
+      .addCase(loadHomeData.fulfilled, (state, action) => {
+        state.articles = action.payload;
+        state.isLoading = false;
+        state.hasError = false;
+      })
+      .addCase(loadHomeData.rejected, (state, action) => {
+        state.isLoading = false;
+        state.hasError = true;
+      });
+  },
+};
+
+export const articlesDataSlice = createSlice(sliceOptions);
+
+export const selectArticlesData = (state) => state.homeArticles.articles;
+
+export default articlesDataSlice.reducer;

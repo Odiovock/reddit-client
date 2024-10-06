@@ -3,6 +3,7 @@ import Lama from "../../ressources/images/1002997-Lama.jpg";
 import Bob from "../../ressources/images/Bob.jpg"
 
 export default function ArticlePage() {
+
   return (
     <div className="fullArticleContainer">
         <div className="fullArticleButtons">

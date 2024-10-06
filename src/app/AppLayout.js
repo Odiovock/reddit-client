@@ -1,8 +1,8 @@
 import React from "react";
 import {Outlet, NavLink} from "react-router-dom";
 import ROUTES from  "./routes";
-import SearchBar from "../features/searchbar/SearchBar";
-import Filter from "../features/filter/Filter";
+import SearchBar from "../components/searchbar/SearchBar";
+import Filter from "../components/filter/Filter";
 
 export default function AppLayout() {
     return (
