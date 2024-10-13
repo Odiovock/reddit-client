@@ -14,9 +14,10 @@ export const loadHomeData = createAsyncThunk(
         numComments: article.data.num_comments,
         content: article.data.selftext,
         created: article.data.created,
+        permalink: article.data.permalink,
         previewImage: article.data.preview?.images[0].source.url,
         score: article.data.score,
-        title: article.data.title
+        title: article.data.title,
       }
 
       formatedData.push(articleObject);
@@ -52,8 +53,8 @@ export const sliceOptions = {
   },
 };
 
-export const articlesDataSlice = createSlice(sliceOptions);
+export const mainPageArticlesDataSlice = createSlice(sliceOptions);
 
 export const selectArticlesData = (state) => state.homeArticles.articles;
 
-export default articlesDataSlice.reducer;
+export default mainPageArticlesDataSlice.reducer;

@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import homeArticlesReducer from "../features/articledata/articledataslice";
+import homeArticlesReducer from "../features/articledata/mainpagearticlesdataslice";
+import articleReducer from "../features/articledata/articlepagearticledata";
 
 export default configureStore({
     reducer: {
-        homeArticles: homeArticlesReducer
+        homeArticles: homeArticlesReducer,
+        article: articleReducer
     }
-});
+});;

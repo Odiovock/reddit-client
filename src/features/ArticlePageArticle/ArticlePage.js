@@ -1,9 +1,25 @@
 import React from "react";
 import Lama from "../../ressources/images/1002997-Lama.jpg";
 import Bob from "../../ressources/images/Bob.jpg"
+import { useSelector } from "react-redux";
+import { selectArticleData } from "../articledata/articlepagearticledata";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { loadArticleData } from "../articledata/articlepagearticledata";
 
 export default function ArticlePage() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const articlePermaLink = urlParams.get("articlePermaLink");
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(loadArticleData(articlePermaLink));
+    }, [dispatch]);
+
+    const articleData = useSelector(selectArticleData);
+    
+    console.log(articleData);
   return (
     <div className="fullArticleContainer">
         <div className="fullArticleButtons">

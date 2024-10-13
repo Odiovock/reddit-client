@@ -69,12 +69,18 @@ nav a {
 }
 
 .mainPageArticle {
-  width: 70%;
+  max-width: 70%;
   padding: 20px;
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
+}
+
+.mainPageArticleWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .mainPageArticle img {
@@ -92,6 +98,10 @@ nav a {
   flex-direction: column; 
   justify-content: space-around; 
   align-items: center;
+}
+
+.mainPageArticleTextZone:hover {
+  background-color: lightgray;
 }
 
 .mainPageArticleButtonZone {
