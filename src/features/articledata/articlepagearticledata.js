@@ -5,9 +5,12 @@ export const loadArticleData = createAsyncThunk(
     "article/loadData",
     async (articleIdentity) => {
         const data = await fetchArticleData(articleIdentity);
-
-        const formatedArticleData = data;
-
+        const formatedArticleData = {
+          title: data[0].data.children[0].data.title,
+          score: data[0].data.children[0].data.score,
+          media: data[0].data.children[0].data.media,
+          isVideo: data[0].data.children[0].data.is_video,
+        };
         return formatedArticleData;
     }
 );
@@ -15,7 +18,7 @@ export const loadArticleData = createAsyncThunk(
 export const sliceOptions = {
     name: "article",
     initialState: {
-      data: {},
+      data: [],
       isLoading: false,
       hasError: false
     },
@@ -27,7 +30,7 @@ export const sliceOptions = {
           state.hasError = false;
         })
         .addCase(loadArticleData.fulfilled, (state, action) => {
-          state.articles = action.payload;
+          state.data = action.payload;
           state.isLoading = false;
           state.hasError = false;
         })

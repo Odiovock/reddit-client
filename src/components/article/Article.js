@@ -5,7 +5,7 @@ export default function Article ({article}) {
     const navigate = useNavigate();
 
     function handleOnClick (event) {
-        navigate("/articles");
+        navigate(`/articles/?articlePermaLink=${article.permalink}`);
     }
 
     console.log(article);
