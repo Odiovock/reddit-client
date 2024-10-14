@@ -45,5 +45,6 @@ export const sliceOptions = {
 export const articlePageArticleDataSlice = createSlice(sliceOptions);
 
 export const selectArticleData = (state) => state.article.data;
+export const isLoadingArticleDataState = (state) => state.article.isLoading;
 
 export default articlePageArticleDataSlice.reducer;

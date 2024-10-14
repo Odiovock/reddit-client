@@ -7,7 +7,7 @@ export default function Article ({article}) {
     function handleOnClick (event) {
         navigate(`/articles/?articlePermaLink=${article.permalink}`);
     }
-    
+
     return (
         <div className="mainPageArticleWrapper">
             <div className="mainPageArticle borderedElement">

@@ -92,5 +92,6 @@ export const sliceOptions = {
 export const mainPageArticlesDataSlice = createSlice(sliceOptions);
 
 export const selectArticlesData = (state) => state.homeArticles.articles;
-
+export const isLoadingState = (state) => state.homeArticles.isLoading;
+ 
 export default mainPageArticlesDataSlice.reducer;
