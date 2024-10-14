@@ -1,6 +1,5 @@
 import React from "react";
 import Lama from "../../ressources/images/1002997-Lama.jpg";
-import Bob from "../../ressources/images/Bob.jpg"
 import { useSelector } from "react-redux";
 import { selectArticleData } from "../articledata/articlepagearticledata";
 import { useEffect } from "react";
@@ -19,7 +18,7 @@ export default function ArticlePage() {
 
     const articleData = useSelector(selectArticleData);
     
-  return (
+    return (
     <div className="fullArticleContainer">
         <div className="fullArticleButtons">
             <button className="opinionButton">upvote</button>
@@ -34,5 +33,5 @@ export default function ArticlePage() {
         <div className="fullArticleComments scrollZones">
         </div>
     </div>
-  );
+    );
 }
