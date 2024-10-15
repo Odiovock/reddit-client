@@ -1,19 +1,22 @@
 import React from "react";
 import Article from "../../components/article/Article";
-import store from "../../app/store";
 import { useSelector } from "react-redux";
-import { selectArticlesData, isLoadingState } from "../articledata/mainpagearticlesdataslice";
+import { selectArticlesData, isLoadingState, isLoadingSearchState, setIsLoadingSearch } from "../articledata/mainpagearticlesdataslice";
 import { useEffect } from "react";
 import { loadHomeData } from "../articledata/mainpagearticlesdataslice";
 import { useDispatch } from "react-redux";
 
 export default function MainPageArticle() {
     const dispatch = useDispatch();
-    const state = store.getState();
     const isLoading = useSelector(isLoadingState);
+    const isLoadingSearch = useSelector(isLoadingSearchState);
 
     useEffect(() => {
-      dispatch(loadHomeData());
+      if (isLoadingSearch) {
+        dispatch(setIsLoadingSearch(false));
+      } else {
+        dispatch(loadHomeData());
+      }
     }, [dispatch]);
 
     const allArticles = useSelector(selectArticlesData);

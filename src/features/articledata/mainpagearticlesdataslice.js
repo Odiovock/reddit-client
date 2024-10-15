@@ -55,9 +55,14 @@ export const sliceOptions = {
   initialState: {
     articles: [],
     isLoading: false,
+    isLoadingSearch: false,
     hasError: false
   },
-  reducers: {},
+  reducers: {
+    setIsLoadingSearch: (state, action) => {
+      state.isLoadingSearch = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loadHomeData.pending, (state) => {
@@ -91,7 +96,10 @@ export const sliceOptions = {
 
 export const mainPageArticlesDataSlice = createSlice(sliceOptions);
 
+export const { setIsLoadingSearch } = mainPageArticlesDataSlice.actions;
+
 export const selectArticlesData = (state) => state.homeArticles.articles;
 export const isLoadingState = (state) => state.homeArticles.isLoading;
+export const isLoadingSearchState = (state) => state.homeArticles.isLoadingSearch;
  
 export default mainPageArticlesDataSlice.reducer;
