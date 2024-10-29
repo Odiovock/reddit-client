@@ -70,10 +70,9 @@ nav a {
 
 .mainPageArticle {
   max-width: 70%;
-  padding: 20px;
   margin-bottom: 50px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: start;
 }
 
@@ -93,7 +92,7 @@ nav a {
 
 .mainPageArticleTextZone {
   text-align: center;
-  width: 70%;
+  width: 80%;
   padding: 15px;
   box-sizing: border-box; 
   display: flex; 
@@ -107,7 +106,8 @@ nav a {
 }
 
 .mainPageArticleButtonZone {
-  width: 20%;
+  width: 150px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: start;

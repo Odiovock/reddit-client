@@ -22,7 +22,7 @@ export default function Article ({article}) {
                         article.previewImage ? <img src={article.previewImage} alt="Article image if any"/> : ""
                     }
                     {
-                        article.content ? <p className="scrollZones" style={{maxHeight: "300px"}}>{article.content}</p> : ""
+                        article.content ? <p className="scrollZones" style={{maxHeight: "300px", width: "100%", paddingRight: "10px"}}>{article.content}</p> : ""
                     }
                 </div>
             </div>
