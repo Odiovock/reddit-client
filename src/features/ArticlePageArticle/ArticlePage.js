@@ -40,6 +40,15 @@ export default function ArticlePage() {
                     }
                 </div>
                 <div className="fullArticleComments scrollZones">
+                    {
+                        articleData.comments.map((comment) => {
+                            return (
+                                <div key={comment.data.id} className="yourFullArticleComment borderElement">
+                                    <p>{comment.data.body}</p>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         );

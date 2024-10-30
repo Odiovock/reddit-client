@@ -10,6 +10,7 @@ export const loadArticleData = createAsyncThunk(
           score: data[0].data.children[0].data.score,
           media: data[0].data.children[0].data.media,
           isVideo: data[0].data.children[0].data.is_video,
+          comments: data[1].data.children
         };
         return formatedArticleData;
     }
