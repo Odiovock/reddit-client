@@ -1,7 +1,14 @@
 import React from "react";
 import Article from "../../components/article/Article";
 import { useSelector } from "react-redux";
-import { selectArticlesData, isLoadingState, isLoadingSearchState, setIsLoadingSearch } from "../articledata/mainpagearticlesdataslice";
+import { 
+    selectArticlesData, 
+    isLoadingState, 
+    isLoadingSearchState, 
+    setIsLoadingSearch, 
+    isLoadingFilterState, 
+    setIsLoadingFilter 
+} from "../articledata/mainpagearticlesdataslice";
 import { useEffect } from "react";
 import { loadHomeData } from "../articledata/mainpagearticlesdataslice";
 import { useDispatch } from "react-redux";
@@ -10,10 +17,13 @@ export default function MainPageArticle() {
     const dispatch = useDispatch();
     const isLoading = useSelector(isLoadingState);
     const isLoadingSearch = useSelector(isLoadingSearchState);
+    const isLoadingFilter = useSelector(isLoadingFilterState);
 
     useEffect(() => {
       if (isLoadingSearch) {
         dispatch(setIsLoadingSearch(false));
+      } else if (isLoadingFilter) {
+        dispatch(setIsLoadingFilter(false));
       } else {
         dispatch(loadHomeData());
       }

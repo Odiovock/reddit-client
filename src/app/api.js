@@ -12,12 +12,12 @@ export const fetchArticleData = async (articlePermaLink) => {
 
 export const fetchSearchData = async (searchKeyWord) => {
     const data = await fetch(`https://api.reddit.com/search/.json?raw_json=1&q=${searchKeyWord}`);
-    const json = await data.json()
+    const json = await data.json();
     return json;
 }
 
-export const fetchFilteredData = async (searchFilter) => {
-    const data = await fetch();
+export const fetchFilteredData = async (filter) => {
+    const data = await fetch(`https://api.reddit.com/search/.json?raw_json=1&q=${filter}`);
     const json = await data.json();
     return json;
 }

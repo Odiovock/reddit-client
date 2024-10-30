@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { setSearchTerm, clearSearchTerm, selectSearchTerm } from "./searchBarSlice";
 import { loadSearchData } from "../../features/articledata/mainpagearticlesdataslice";
 import { setIsLoadingSearch } from "../../features/articledata/mainpagearticlesdataslice";
+import { clearFilter } from "../filter/filterslice";
+import { clear } from "@testing-library/user-event/dist/clear";
 
 export default function SearchBar() {
     const search = useSelector(selectSearchTerm);
@@ -19,6 +21,7 @@ export default function SearchBar() {
         dispatch(setIsLoadingSearch(true));
         navigate("/")
         dispatch(loadSearchData(search));
+        dispatch(clearFilter());
     }
 
     function hanldeOnFocus () {

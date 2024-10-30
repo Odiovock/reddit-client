@@ -1,0 +1,18 @@
+export const filterArray = [
+    {display: "3D printing", value: "3d_printing"},
+    {display: "Action video games", value: "action_games"},
+    {display: "Adventure video games", value: "adventure_games"},
+    {display: "Amazing", value: "amazing"},
+    {display: "Animals & pets", value: "animals_and_pets"},
+    {display: "Computer & hardware", value: "computer_and_hardware"},
+    {display: "Cringe & facepalm", value: "cringe_and_facepalm"},
+    {display: "Esports", value: "esports"},
+    {display: "Funny", value: "funny"},
+    {display: "Gaming console & gear", value: "gaming_console_and_gear"},
+    {display: "Memes", value: "memes"},
+    {display: "Mobile games", value: "mobile_games"},
+    {display: "Oddly Satisfying", value: "oddly_satisfying"},
+    {display: "Other games", value: "other_games"},
+    {display: "Reddit Meta", value: "reddit_meta"},
+    {display: "Wholesome & heartwarming", value: "wholesome_and_heartwarming"},
+]
