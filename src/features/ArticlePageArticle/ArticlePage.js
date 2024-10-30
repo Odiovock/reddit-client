@@ -29,25 +29,38 @@ export default function ArticlePage() {
     } else  {
         return (
             <div className="fullArticleContainer">
-                <div className="fullArticleButtons">
-                    <button className="opinionButton">upvote</button>
-                    <button className="opinionButton">downvote</button>
-                </div>
                 <div className="fullArticleContent scrollZones">
                     <h1 style={{width: "100%", textAlign: "center"}}>{articleData.title}</h1>
                     {
-                        articleData.isVideo ? "This is a video" : <div><img src={Lama} alt="it's a lama" /><p></p></div>//how the fuck do I do this
+                        articleData.isVideo ? 
+                            articleData.media.reddit_video ? 
+                                <video style={{width: "100%", maxHeight: "600px"}} controls>
+                                    <source src={articleData.media.reddit_video.fallback_url} type="video/ogg"></source>
+                                </video> :  
+                                <p>Video not found.</p> :
+                           articleData.media_embed ? 
+                                <div className="bypassVideoSize" dangerouslySetInnerHTML={{__html: articleData.media_embed.content}}></div> :
+                                articleData.preview ? 
+                                <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+                                    <img className="scalableimg" src={articleData.preview} alt="article image if any"/>
+                                    <p></p>
+                                </div> : 
+                                ""
+                    }
+                    {
+                        articleData.selfText ? <p>{articleData.selfText}</p> : ""
                     }
                 </div>
                 <div className="fullArticleComments scrollZones">
                     {
-                        articleData.comments.map((comment) => {
+                        articleData.comments ? articleData.comments.map((comment) => {
                             return (
-                                <div key={comment.data.id} className="yourFullArticleComment borderElement">
+                                <div key={comment.data.id} className="yourFullArticleComment borderedElement">
                                     <p>{comment.data.body}</p>
+                                    <p>- {comment.data.author}</p>
                                 </div>
                             )
-                        })
+                        }) : ""
                     }
                 </div>
             </div>

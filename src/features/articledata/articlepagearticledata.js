@@ -9,8 +9,11 @@ export const loadArticleData = createAsyncThunk(
           title: data[0].data.children[0].data.title,
           score: data[0].data.children[0].data.score,
           media: data[0].data.children[0].data.media,
+          media_embed: data[0].data.children[0].data.media_embed,
+          preview: data[0].data.children[0].data.preview.images[0].source.url,
           isVideo: data[0].data.children[0].data.is_video,
-          comments: data[1].data.children
+          comments: data[1].data.children,
+          selfText: data[0].data.children[0].data.selftext
         };
         return formatedArticleData;
     }

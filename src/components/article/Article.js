@@ -19,7 +19,7 @@ export default function Article ({article}) {
                 <div className="mainPageArticleTextZone" onClick={handleOnClick}>
                     <h2>{article.title}</h2>
                     {
-                        article.previewImage ? <img src={article.previewImage} alt="Article image if any"/> : ""
+                        article.previewImage ? <img className="scalableimg" src={article.previewImage} alt="Article image if any"/> : ""
                     }
                     {
                         article.content ? <p className="scrollZones" style={{maxHeight: "300px", width: "100%", paddingRight: "10px"}}>{article.content}</p> : ""

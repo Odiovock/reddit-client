@@ -82,7 +82,7 @@ nav a {
   justify-content: center;
 }
 
-.mainPageArticle img {
+.scalableimg {
   margin: auto;
   width: auto;
   max-width: 70%;
@@ -185,7 +185,7 @@ input.hs-search-field__input {
 
 .yourFullArticleComment {
   width: 95%;
-  margin-right: 20%;
+  transform: translate(-10%, 0);
   box-sizing: border-box;
   margin-top: 50px;
   margin-bottom: 10px;
@@ -242,4 +242,23 @@ input.hs-search-field__input {
 
 .scrollZones::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(rgba(85,161,205), rgba(150, 100, 205));
+}
+
+.bypassVideoSize  iframe{
+  width: 888px !important;
+  height: 500px !important;
+}
+
+@media only screen and (max-width: 1220px) {
+  .fullArticleContent {
+    width: 100%;
+  }
+
+  .fullArticleComments {
+    width: 100%;
+  }
+
+  .yourFullArticleComment {
+    transform: translate(0px, 0px);
+  }
 }
