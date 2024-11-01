@@ -18,7 +18,7 @@ export default function ArticleZone () {
     } else if (articleData.preview) {
         return (
             <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-                <img className="scalableimg" src={articleData.preview} alt="article image if any"/>
+                <img className="scalableimg" src={articleData.preview} alt="article preview if any"/>
             </div>
         );
     }

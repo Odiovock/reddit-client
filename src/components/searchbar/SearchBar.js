@@ -5,7 +5,6 @@ import { setSearchTerm, clearSearchTerm, selectSearchTerm } from "./searchBarSli
 import { loadSearchData } from "../../features/articledata/mainpagearticlesdataslice";
 import { setIsLoadingSearch } from "../../features/articledata/mainpagearticlesdataslice";
 import { clearFilter } from "../filter/filterslice";
-import { clear } from "@testing-library/user-event/dist/clear";
 
 export default function SearchBar() {
     const search = useSelector(selectSearchTerm);

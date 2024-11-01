@@ -16,7 +16,7 @@ export default function ArticlePage() {
 
     useEffect(() => {
         dispatch(loadArticleData(articlePermaLink));
-    }, [dispatch]);
+    }, [dispatch, articlePermaLink]);
 
     const articleData = useSelector(selectArticleData);
     

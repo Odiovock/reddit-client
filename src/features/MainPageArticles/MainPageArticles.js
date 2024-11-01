@@ -27,7 +27,7 @@ export default function MainPageArticle() {
       } else {
         dispatch(loadHomeData());
       }
-    }, [dispatch]);
+    }, [dispatch, isLoadingSearch, isLoadingFilter]);
 
     const allArticles = useSelector(selectArticlesData);
 
