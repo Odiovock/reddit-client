@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectArticleData } from "../articledata/articlepagearticledata";
+import { selectArticleDataErrorState } from "../articledata/articlepagearticledata";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { loadArticleData } from "../articledata/articlepagearticledata";
@@ -13,6 +14,7 @@ export default function ArticlePage() {
     const articlePermaLink = urlParams.get("articlePermaLink");
     const dispatch = useDispatch();
     const isLoading = useSelector(isLoadingArticleDataState);
+    const hasError = useSelector(selectArticleDataErrorState);
 
     useEffect(() => {
         dispatch(loadArticleData(articlePermaLink));
@@ -20,12 +22,20 @@ export default function ArticlePage() {
 
     const articleData = useSelector(selectArticleData);
     
-    if (isLoading) {
-        return (
-            <div style={{width: "100%", height: "700px", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <h1>Loading...</h1>
-            </div>
-        );
+    if (isLoading || hasError) {
+        if(isLoading) {
+            return (
+                <div style={{width: "100%", height: "700px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <h1>Loading...</h1>
+                </div>
+            );
+        } else if (hasError) {
+            return (
+                <div style={{width: "100%", height: "700px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <h1>Article data not found...</h1>
+                </div>
+            );
+        }
     } else  {
         return (
             <div className="fullArticleContainer">
