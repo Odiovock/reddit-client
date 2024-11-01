@@ -1,11 +1,11 @@
 import React from "react";
-import Lama from "../../ressources/images/1002997-Lama.jpg";
 import { useSelector } from "react-redux";
 import { selectArticleData } from "../articledata/articlepagearticledata";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { loadArticleData } from "../articledata/articlepagearticledata";
 import { isLoadingArticleDataState } from "../articledata/articlepagearticledata";
+import ArticleZone from "../../components/articleZone/ArticleZone";
 
 export default function ArticlePage() {
     const queryString = window.location.search;
@@ -32,20 +32,7 @@ export default function ArticlePage() {
                 <div className="fullArticleContent scrollZones">
                     <h1 style={{width: "100%", textAlign: "center"}}>{articleData.title}</h1>
                     {
-                        articleData.isVideo ? 
-                            articleData.media.reddit_video ? 
-                                <video style={{width: "100%", maxHeight: "600px"}} controls>
-                                    <source src={articleData.media.reddit_video.fallback_url} type="video/ogg"></source>
-                                </video> :  
-                                <p>Video not found.</p> :
-                           articleData.media_embed ? 
-                                <div className="bypassVideoSize" dangerouslySetInnerHTML={{__html: articleData.media_embed.content}}></div> :
-                                articleData.preview ? 
-                                <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-                                    <img className="scalableimg" src={articleData.preview} alt="article image if any"/>
-                                    <p></p>
-                                </div> : 
-                                ""
+                        articleData.media_embed ? <ArticleZone/> : ""
                     }
                     {
                         articleData.selfText ? <p>{articleData.selfText}</p> : ""
